@@ -26,6 +26,13 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// JSP support (embedded Tomcat Jasper)
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	// JSTL implementation (GlassFish Jakarta JSTL)
+	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
+	// JSTL API (Jakarta) - provide jakarta.servlet.jsp.jstl.* interfaces
+	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.1'
+
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
