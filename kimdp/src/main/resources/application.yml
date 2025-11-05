@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: user-management
+  
+  # 데이터소스 설정
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/userdb?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Seoul
+    username: root
+    password: 
+  
+  # JPA 설정
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+  
+  # JSP 설정
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+# 로깅 설정
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+
+# 서버 설정
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
